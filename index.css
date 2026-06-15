@@ -102,25 +102,3 @@ h2::before {
   }
 }
 
-/* ----------------------------------------------------
-   3‑Column Card Layout for Large Screens – Grid version
-   ---------------------------------------------------- */
-
-/* 1️⃣  Make the container a grid only on wide viewports. */
-@media (min-width: 1024px) {
-    .container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* three equal columns */
-        gap: 20px;                            /* space between cards   */
-        justify-content: center;              /* centre the whole grid  */
-    }
-
-    /* 2️⃣  Ensure each section stays at most one‑third of the width. */
-    .container > section {
-        max-width: 100%;      /* let the grid do the math */
-    }
-}
-
-/* ----------------------------------------------------
-   End of patch
-   ---------------------------------------------------- */
