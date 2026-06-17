@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Cybersecurity Awareness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-yellow: #FFCC00;
+            --beacon-yellow: #FFFF00;
+            --gray: #BEBEB9;
+            --light-gray: #EBEBEB;
+            --black: #1E1E1E;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--beacon-yellow) 100%);
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="3" fill="%231E1E1E" opacity="0.1"/><circle cx="50" cy="50" r="5" fill="%231E1E1E" opacity="0.1"/><circle cx="80" cy="80" r="4" fill="%231E1E1E" opacity="0.1"/></svg>');
+            background-size: 100px 100px;
+            z-index: 0;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--black);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: var(--black);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .author {
+            font-size: 18px;
+            color: var(--black);
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-yellow);
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-yellow), var(--beacon-yellow));
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-yellow);
+            border-radius: 3px;
+        }
+
+        /* Body text */
+        p {
+            font-size: 17px;
+            color: #34495e;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        /* Lists */
+        ul {
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        li {
+            font-size: 17px;
+            margin-bottom: 12px;
+            color: #34495e;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--primary-yellow);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+
+        /* Icon styling */
+        .icon {
+            font-size: 40px;
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        section:hover .icon {
+            transform: scale(1.1);
+            background-color: var(--primary-yellow);
+            color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 0;
+            color: #7f8c8d;
+            font-size: 16px;
+            border-top: 2px solid var(--light-gray);
+            background-color: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 25px;
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 20px;
+                min-height: 220px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Decorative elements */
+        .decor {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.05;
+        }
+
+        .decor-1 {
+            top: 20%;
+            left: 10%;
+            font-size: 120px;
+        }
+
+        .decor-2 {
+            bottom: 20%;
+            right: 10%;
+            font-size: 120px;
+        }
+
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        section:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        section:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        section:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        /* Additional styling for the portfolio sections */
+        .portfolio-section {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .portfolio-section h2 {
+            color: var(--black);
+            border-bottom: 2px solid var(--primary-yellow);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-yellow);
+            color: var(--black);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--black);
+            font-size: 18px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-yellow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--black);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            background-color: var(--beacon-yellow);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Financial Cybersecurity Awareness</h1>
+            <p class="subtitle">Protecting Your Digital Assets</p>
+            <p class="author">Created By Quentin Bombande</p>
+        </header>
+
+        <div class="grid">
+            <!-- Cybersecurity Content -->
+            <section>
+                <div class="icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>Understanding Cyber Threats</h2>
+                <p>Cyber threats are constantly evolving. From phishing to ransomware, understanding the latest threats
+                    is crucial for financial security.</p>
+                <ul>
+                    <li>Phishing attacks targeting financial institutions</li>
+                    <li>Ransomware affecting banking systems</li>
+                    <li>Identity theft through digital breaches</li>
+                    <li>Insider threats from within organizations</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h2>Security Best Practices</h2>
+                <p>Implementing strong security measures protects your financial data and prevents unauthorized access.
+                </p>
+                <ul>
+                    <li>Use multi-factor authentication for all accounts</li>
+                    <li>Regularly update software and systems</li>
+                    <li>Create strong, unique passwords</li>
+                    <li>Monitor financial accounts regularly</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2>Personal Financial Protection</h2>
+                <p>Protect your personal finances from cybercriminals with these essential steps.</p>
+                <ul>
+                    <li>Secure your online banking with two-factor authentication</li>
+                    <li>Be cautious of suspicious emails and links</li>
+                    <li>Use secure networks when accessing financial accounts</li>
+                    <li>Regularly review credit reports for unauthorized activity</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2>Business Security Solutions</h2>
+                <p>For businesses, protecting financial data requires a comprehensive security strategy.</p>
+                <ul>
+                    <li>Implement network segmentation</li>
+                    <li>Conduct regular security audits</li>
+                    <li>Train employees on cybersecurity awareness</li>
+                    <li>Develop incident response plans</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h2>Red Flags to Watch For</h2>
+                <p>Recognize these warning signs that indicate potential financial fraud.</p>
+                <ul>
+                    <li>Sudden account access from unfamiliar locations</li>
+                    <li>Unexpected charges or transactions</li>
+                    <li>Requests for sensitive information over email</li>
+                    <li>Unsolicited calls about account security</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h2>Compliance and Regulations</h2>
+                <p>Financial institutions must comply with various regulations to protect customer data.</p>
+                <ul>
+                    <li>GDPR for European privacy protection</li>
+                    <li>PCI DSS for payment card security</li>
+                    <li>SOX for financial reporting accuracy</li>
+                    <li>FFIEC guidelines for financial institutions</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2>Risk Assessment Tools</h2>
+                <p>Use these tools to evaluate and improve your cybersecurity posture.</p>
+                <ul>
+                    <li>Threat modeling frameworks</li>
+                    <li>Vulnerability scanning tools</li>
+                    <li>Penetration testing services</li>
+                    <li>Security awareness training programs</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h2>Emergency Response Plan</h2>
+                <p>Having a plan ready ensures quick action in case of security incidents.</p>
+                <ul>
+                    <li>Immediate account lockdown procedures</li>
+                    <li>Contacting financial institutions promptly</li>
+                    <li>Reporting to relevant authorities</li>
+                    <li>Documenting the incident for investigation</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="portfolio-section">
+            <h2>About the Author</h2>
+            <p>I am an aspiring IT professional passionate about web development, cybersecurity, and building practical
+                digital solutions through continuous learning and hands-on projects.</p>
+
+            <h3>Key Skills & Expertise</h3>
+            <div class="skills-container">
+                <span class="skill-tag">Cybersecurity</span>
+                <span class="skill-tag">Financial Security</span>
+                <span class="skill-tag">Risk Assessment</span>
+                <span class="skill-tag">Compliance</span>
+                <span class="skill-tag">Incident Response</span>
+                <span class="skill-tag">Security Awareness</span>
+                <span class="skill-tag">Regulatory Compliance</span>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="portfolio-section">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span>security@financialprotection.com</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <span>+233 598202744</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span>Bombande Develops HQ</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 25px;">Connect with Me</h3>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/quentin-bombande-3b3965221/" target="_blank" class="social-link"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/humblegospels?s=11" target="_blank" class="social-link"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://github.com/QuentinCoding912001" target="_blank" class="social-link"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.reddit.com/u/QHB912001/s/o3JgyhjM7b" target="_blank" class="social-link"><i
+                        class="fab fa-reddit"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation for portfolio sections
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.portfolio-section');
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            setTimeout(() => {
+                sections.forEach(section => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                });
+            }, 300);
+        });
+    </script>
+</body>
+
+</html>
