@@ -45,6 +45,6 @@ docs/         Screenshot used in this README
 
 ## Author
 
-**Quentin Bombande**, web developer in Accra, Ghana
+**Quentin Bombande**, ICT support and digital operations, Accra, Ghana
 
 [Portfolio](https://quentincoding912001.github.io/quentin-portfolio/) · [LinkedIn](https://www.linkedin.com/in/quentin-bombande-3b3965221/) · [GitHub](https://github.com/QuentinCoding912001)
