@@ -1,5 +1,9 @@
-// Simple animation for portfolio sections
+// Gentle entrance animation for the author and contact sections
 document.addEventListener('DOMContentLoaded', function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
     const sections = document.querySelectorAll('.portfolio-section');
 
     sections.forEach(section => {

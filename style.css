@@ -264,15 +264,16 @@ footer {
 }
 
 /* Animation for cards */
+/* Uses the separate "translate" property so the hover lift (transform) still works after the animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        translate: 0 30px;
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        translate: 0 0;
     }
 }
 
@@ -403,4 +404,10 @@ section:nth-child(9) {
 .social-link:hover {
     transform: translateY(-5px);
     background-color: var(--beacon-yellow);
+}
+
+.contact-item a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }

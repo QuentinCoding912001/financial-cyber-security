@@ -2,6 +2,8 @@
 
 A responsive, single-page guide that explains common financial cyber threats in plain language and shows people how to protect their money, bank accounts and mobile money wallets.
 
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+
 **Live site:** https://quentincoding912001.github.io/financial-cyber-security/
 
 ![Screenshot of the Financial Cybersecurity Awareness site](docs/screenshot.png)
@@ -13,7 +15,7 @@ A responsive, single-page guide that explains common financial cyber threats in 
 - Business security basics
 - Red flags that signal fraud
 - Mobile money (MoMo) safety for users in Ghana
-- Compliance frameworks such as GDPR and PCI DSS
+- Ghana's data protection and cybersecurity laws, plus PCI DSS
 - Risk assessment tools and an emergency response plan
 
 ## Built with
